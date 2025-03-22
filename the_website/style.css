@@ -1,0 +1,58 @@
+/* style.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    color: white; /* White text for contrast */
+}
+
+.main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%; /* Limit width on larger screens */
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%; /* Take full width of main container */
+    max-width: 600px; /* Maximum width for readability */
+}
+
+h1 {
+    color: #e0f7fa; /* Light blue heading */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    font-size: 1.1em;
+}
+
+button {
+    background-color: #00bcd4; /* Teal button */
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0097a7; /* Darker teal on hover */
+}
+
+#output {
+    margin-top: 30px;
+    font-size: 1.1em;
+}
