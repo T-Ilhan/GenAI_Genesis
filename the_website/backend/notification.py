@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import smtplib
 import os
 
 app = Flask(__name__)
+CORS(app)
 
 # Email config
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
@@ -20,6 +22,7 @@ user_data = {
 
 @app.route('/fallen', methods=['POST'])  # Changed to POST
 def fallen():
+    print("FALLEN")
     data = request.get_json()  # Get JSON data from Arduino
     user_id = data.get('userId')  # Extract user ID
     if user_id:
@@ -31,6 +34,20 @@ def fallen():
             return jsonify({"error": "User not found"}), 404
     else:
         return jsonify({"error": "User ID not provided"}), 400
+    
+@app.route('/setup', methods=['POST'])
+def setup():
+    data = request.get_json()
+    user_data[data.get("userId")] = {
+        "name": data.get("data")[0],
+        "email": data.get("data")[1],
+        "contact": data.get("data")[2]
+    }
+
+    print(user_data)
+
+    return "ok"
+    
 
 def send_email(email_address):
     message = "Fall detected for user. Please check on them."

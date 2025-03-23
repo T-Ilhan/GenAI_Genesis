@@ -132,26 +132,36 @@ if (conversations && conversations.length > 0) {
     alert("Latest conversation restored");
 }
 
-function sendEmailToBackend() {
-    const primaryEmailAddress = responses[1];
-    if (primaryEmailAddress) {
-        fetch('http://127.0.0.1:5000/send_user_email', {
-            method: 'POST',
+async function sendEmailToBackend() {
+    await fetch('http://127.0.0.1:5000/setup', {
+      method: "POST",
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({ email: primaryEmailAddress })
-        })
-        .then(response => response.json())
-        .then(data => {
-            console.log('Email sent to backend:', data);
-            speak("Email sent to backend");
-        })
-        .catch(error => {
-            console.error('Error sending email to backend:', error);
-            speak("There was an error sending the email to the backend");
-        });
-    } else {
-        speak("Primary email address not found.");
-    }
+            body: JSON.stringify({
+              userId: "DEMO",
+              data: responses,
+            })
+    })
+    // const primaryEmailAddress = responses[1];
+    // if (primaryEmailAddress) {
+    //     fetch('http://127.0.0.1:5000/send_user_email', {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ email: primaryEmailAddress })
+    //     })
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         console.log('Email sent to backend:', data);
+    //         speak("Email sent to backend");
+    //     })
+    //     .catch(error => {
+    //         console.error('Error sending email to backend:', error);
+    //         speak("There was an error sending the email to the backend");
+    //     });
+    // } else {
+    //     speak("Primary email address not found.");
+    // }
 }
