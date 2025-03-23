@@ -1,34 +1,34 @@
 /* style.css */
 body {
     font-family: 'Arial', sans-serif;
-    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    color: white; /* White text for contrast */
+    color: white;
 }
 
 .main {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 80%; /* Limit width on larger screens */
+    width: 80%;
 }
 
 .container {
-    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.1);
     padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 100%; /* Take full width of main container */
-    max-width: 600px; /* Maximum width for readability */
+    width: 100%;
+    max-width: 600px;
 }
 
 h1 {
-    color: #e0f7fa; /* Light blue heading */
+    color: #e0f7fa;
     margin-bottom: 20px;
 }
 
@@ -37,19 +37,27 @@ p {
     font-size: 1.1em;
 }
 
-button {
-    background-color: #00bcd4; /* Teal button */
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1em;
+#startCircle {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    background-color: #00bcd4;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto; /* Center the circle */
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
 
-button:hover {
-    background-color: #0097a7; /* Darker teal on hover */
+#startCircle:hover {
+    background-color: #0097a7;
+}
+
+.icon {
+    width: 60px; /* Adjust icon size */
+    height: 60px; /* Adjust icon size */
+    opacity: 0.8; /* Adjust icon opacity */
 }
 
 #output {
