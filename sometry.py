@@ -8,10 +8,12 @@ model = YOLO('yolov8n.pt')  # or yolov8s.pt, yolov8m.pt, yolov8l.pt, yolov8x.pt
 
 def capture_image():
     """Captures an image from the laptop's camera."""
-    cap = cv2.VideoCapture(0)  # 0 indicates the default camera
+    cap = cv2.VideoCapture(1)  # 0 indicates the default camera
     if not cap.isOpened():
         print("Error: Could not open camera.")
         return None
+    
+   
 
     ret, frame = cap.read()
     cap.release()

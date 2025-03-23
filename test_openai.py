@@ -54,7 +54,7 @@ def analyze_image_with_gpt4v(image, prompt):
 
 def main():
     """Tests the OpenAI Vision API with live camera input."""
-    cap = cv2.VideoCapture(0)  # 0 indicates the default camera.
+    cap = cv2.VideoCapture(1)  # 0 indicates the default camera.
 
     if not cap.isOpened():
         print("Error: Could not open camera.")
